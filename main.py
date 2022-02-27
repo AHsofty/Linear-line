@@ -38,8 +38,7 @@ pygame.draw.line(screen, WHITE, new_a, new_b)
 # We type some text
 myfont = pygame.font.SysFont(pygame.font.get_default_font(), 25)
 functionText = myfont.render(f"y = {f.a}x + {f.b}", False, WHITE)
-aText = myfont.render(f"({A[0]}, {A[1]})", False, WHITE)
-bText = myfont.render(f"({B[0]}, {B[1]})", False, WHITE)
+aText = myfont.render(f"({-A[0]}, {A[1]})", False, WHITE)
 
 
 running = True
@@ -47,7 +46,6 @@ while running:
 	# OMIGOSH HARDCODING
 	screen.blit(functionText,((W/2)-35, 10))
 	screen.blit(aText, (new_a[0]+20, new_a[1]-20))
-	screen.blit(bText, (new_b[0], new_b[1]))
 
 	for event in pygame.event.get():
 		if event.type == pygame.QUIT:
